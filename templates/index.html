@@ -1,7 +1,29 @@
-
+{% extends "base.html" %}
 
 {% block content %}
     <div class="container">
-        <h1>Rutabagas!</h1>
+        <div class = 'row'>
+            <div class='col'>
+                <h1 class='wrapper text-center main-heading'><u>Measurement Technique</u></h1>
+                <div class="row">
+                    <div class="col">
+                        <div class = 'wrapper text-center'>
+                            <h1 class="main-heading"><u>Learn</u></h1>
+                            <div class="btn-group-vertical">
+                                <a href="measuring/1" class="btn btn-success" role="button">Taking Measurements</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class = 'col'>
+                        <div class='wrapper text-center'>
+                            <h1 class="main-heading"><u>Do</u></h1>
+                            <div class="btn-group-vertical">
+                                <a href="measurement_practice" class="btn btn-primary" role="button">Measurement Practice</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 {% endblock %}  
