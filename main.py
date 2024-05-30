@@ -8,8 +8,16 @@ app.secret_key = 'yrtsimehc'
 
 @app.route('/')
 def index():
-    wide = random.randint(0,100)
-    return render_template('index.html',title='Measurement Practice', wide=wide)
+    return render_template('index.html',title='Measurement Practice')
+
+@app.route('/measurement_practice')
+def measurement():
+    num_divisions = random.choice([1, 10, 100])
+    starting_value = random.randint(0,101)
+    end_value = starting_value + num_divisions
+    wide = round(random.uniform(starting_value, end_value-1)/end_value*100,1)
+    object_length = round(starting_value + wide/100*num_divisions,1)
+    return render_template('measurement_practice.html',title='Measurement Practice', wide = wide, start_value = starting_value, end_value = end_value, object_length = object_length)
 
 if __name__ == '__main__':
     app.run()

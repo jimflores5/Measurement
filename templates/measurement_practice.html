@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <section class="container">
+        <h1 class = "wrapper text-center main-heading">Measurement Practice</h1>
+        <h2 class="page-instructions">Examine the ruler below. Enter the proper measurement for the shaded box.</h2>
+    </section>
+    <section class="container wrapper text-center">
+        <em>Form field here...</em>
+    </section>
+    <br>
+    <section class="container text-center border border-secondary" style="padding-top: 1%;">
+        <div class="row">
+            <p>Starting value = {{start_value}}</p>
+            <p>Ending value = {{end_value}}</p>
+            <div class="bg-danger" style="max-width: {{wide}}%">
+                <p>{{object_length}} ({{wide}}%)</p>
+            </div>
+        </div>
+    </section>
+    <!-- Vertical & Horizontal rulers: https://codepen.io/Raph285/pen/oNPdPWq -->
+    <!-- Horizontal ruler: https://codepen.io/pbweb/pen/gMQKEK-->
+{% endblock %}  
