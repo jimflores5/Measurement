@@ -1,29 +1,39 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="container">
-        <div class = 'row'>
-            <div class='col'>
+    <section class="container">
+        <section class = 'row'>
+            <section class='col'>
                 <h1 class='wrapper text-center main-heading'><u>Measurement Technique</u></h1>
-                <div class="row">
-                    <div class="col">
+                <section class="row">
+                    <section class="col">
                         <div class = 'wrapper text-center'>
                             <h1 class="main-heading"><u>Learn</u></h1>
                             <div class="btn-group-vertical">
                                 <a href="measuring/1" class="btn btn-success" role="button">Taking Measurements</a>
                             </div>
                         </div>
-                    </div>
-                    <div class = 'col'>
+                    </section>
+                    <section class = 'col'>
                         <div class='wrapper text-center'>
                             <h1 class="main-heading"><u>Do</u></h1>
                             <div class="btn-group-vertical">
                                 <a href="measurement_practice" class="btn btn-primary" role="button">Measurement Practice</a>
                             </div>
                         </div>
-                    </div>
-                </div>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+    <hr>
+    <section class="container text-center border border-secondary" style="padding-top: 1%;">
+        <div class="row">
+            <div class="bg-danger" style="max-width: {{wide}}%">
+                <p>{{wide}}%</p>
             </div>
         </div>
-    </div>
+    </section>
+    <!-- Vertical & Horizontal rulers: https://codepen.io/Raph285/pen/oNPdPWq -->
+    <!-- Horizontal ruler: https://codepen.io/pbweb/pen/gMQKEK-->
 {% endblock %}  
