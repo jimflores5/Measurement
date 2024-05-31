@@ -16,13 +16,13 @@
             </div>
         </div>
         <div class="row">
-            <figure class="col-12 border border-secondary" style="padding:0px">
+            <figure class="col-12" style="padding:0px">
                 {% if num_divisions == 100 %}
-                    <img src="{{url_for('static', filename='100_scale.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
+                    <img src="{{url_for('static', filename='ruler_100.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
                 {% elif num_divisions == 10 %}
-                    <img src="{{url_for('static', filename='10_scale.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
+                    <img src="{{url_for('static', filename='ruler_10.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
                 {% else %}
-                    <img src="{{url_for('static', filename='1_scale.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
+                    <img src="{{url_for('static', filename='ruler_1.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
                 {% endif %}
             </figure>
         </div>
