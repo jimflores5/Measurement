@@ -49,6 +49,11 @@
     text-align: right;
 }
 
+.right-side-label {
+    display: inline-block;
+    text-align: left;
+}
+
 .radio-label {
     vertical-align: middle;
 }

@@ -9,12 +9,34 @@
         <em>Form field here...</em>
     </section>
     <br>
-    <section class="container text-center border border-secondary" style="padding-top: 1%;">
+    <section class="container text-center">
         <div class="row">
-            <p>Starting value = {{start_value}}</p>
-            <p>Ending value = {{end_value}}</p>
             <div class="bg-danger" style="max-width: {{wide}}%">
-                <p>{{object_length}} ({{wide}}%)</p>
+                <p>{{object_length}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <figure class="col-12 border border-secondary" style="padding:0px">
+                {% if num_divisions == 100 %}
+                    <img src="{{url_for('static', filename='100_scale.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
+                {% elif num_divisions == 10 %}
+                    <img src="{{url_for('static', filename='10_scale.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
+                {% else %}
+                    <img src="{{url_for('static', filename='1_scale.png')}}" class="figure-img img-fluid" alt="Scale showing 100 marks.">
+                {% endif %}
+            </figure>
+        </div>
+    </section>
+    <section class="container text-center">
+        <div class="row">
+            <div class="col-1 right-side-label">
+                <p>{{start_value}}</p>
+            </div>
+            <figure class="col-10">
+                <p class="text-center">{{(end_value - start_value)//2 + start_value}}</p>
+            </figure>
+            <div class="col-1 left-side-label">
+                <p>{{end_value}}</p>
             </div>
         </div>
     </section>
