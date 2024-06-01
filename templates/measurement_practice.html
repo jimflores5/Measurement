@@ -29,13 +29,19 @@
     </section>
     <section class="container text-center">
         <div class="row">
-            <div class="col-1 right-side-label">
+            <div class="col-1 left-ruler-mark border-start border-secondary">
                 <p>{{start_value}}</p>
             </div>
-            <figure class="col-10">
-                <p class="text-center">{{(end_value - start_value)/2 + start_value}}</p>
-            </figure>
-            <div class="col-1 left-side-label">
+            <section class="col-10 center-ruler-mark">
+                {% if num_divisions == 1 %}
+                    <p> </p>
+                {% elif end_value > 1 %}
+                    <p class="text-center">{{end_value//2}}</p>
+                {% else %}
+                    <p class="text-center">{{end_value/2}}</p>
+                {% endif %}
+            </section>
+            <div class="col-1 right-ruler-mark border-end border-secondary">
                 <p>{{end_value}}</p>
             </div>
         </div>
