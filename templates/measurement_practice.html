@@ -3,16 +3,13 @@
 {% block content %}
     <section class="container">
         <h1 class = "wrapper text-center main-heading">Measurement Practice</h1>
-        <h2 class="page-instructions">Examine the ruler below. Enter the proper measurement for the shaded box.</h2>
-    </section>
-    <section class="container wrapper text-center">
-        <em>Form field here...</em>
+        <h2 class="page-instructions">Use the ruler below to measure the length of the box.</h2>
     </section>
     <br>
     <section class="container text-center">
         <div class="row">
             <div class="bg-danger" style="max-width: {{wide}}%">
-                <p>{{object_length}}</p>
+                <p class="to-measure"></p>
             </div>
         </div>
         <div class="row">
@@ -30,7 +27,7 @@
     <section class="container text-center">
         <div class="row">
             <div class="col-1 left-ruler-mark border-start border-secondary">
-                <p>{{start_value}}</p>
+                <p>{{start_value}} {{unit}}</p>
             </div>
             <section class="col-10 center-ruler-mark">
                 {% if num_divisions == 1 %}
@@ -47,7 +44,43 @@
         </div>
     </section>
     <br>
-    <p>{{nums}}</p>
+    <section class="container wrapper text-center">
+        <h2 class="frame-heading">Record your answer to the correct precision.</h2>
+        <form action="/measurement_practice" method="post">
+            <div class="row justify-content-center">
+                <label class="col-4 input-label" for="answer">
+                    Length =
+                </label>
+                <input class="col-4 answer-text" name="answer" type="text" value="">
+                <label class="col-4 input-unit" for="answer">
+                    {{unit}}
+                </label>
+                <!-- {% if messages %}
+                    {% set message = messages[index] %}                                        
+                    {% if message[0] != 'error' %}
+                        <div class='{{message[0]}}' style="font-size: 1.1vw">{{message[1]}}</div>
+                    {% else %}
+                        <div class="btn-group dropright">
+                            <button class="btn btn-link dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="font-size: 1.1vw; color:red">
+                                <span class='{{message[0]}}'>{{message[1]}}</span>
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <p class="dropdown-item" style="font-size: 1.5vw; color:red">{{practiceList[index].answer}} {{practiceList[index].units[3]}}</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endif %} -->
+            </div>
+            <br>
+            <p class="record">Progress: <em>Display num_correct/num_tried (and percentage)</em></p>
+            <hr>
+            <div class="container wrapper text-center">
+                <a class="btn btn-info mb-3" href="/" role="button">Main Menu</a>
+                <input class="btn btn-success mb-3" type="submit" value="Check Answer">
+            </div>
+        </form>
+    </section>
+    <p>{{nums}}, {{object_length}}</p>
     <!-- Vertical & Horizontal rulers: https://codepen.io/Raph285/pen/oNPdPWq -->
     <!-- Horizontal ruler: https://codepen.io/pbweb/pen/gMQKEK-->
 {% endblock %}  
