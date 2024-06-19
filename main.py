@@ -27,7 +27,7 @@ def add_trailing_zero(length, sig_fig_position):
     return length
 
 def is_valid_measurement(ans):
-    if len(ans) > 7:
+    if len(ans) > 7 or ans == '':
         # Submitted answer should be 7 characters long or less.
         return False
     for char in ans:
@@ -104,24 +104,23 @@ def measurement():
         if not is_valid_measurement(answer):
             # Check if answer is a valid, positive number.
             # If not, display error message.
-            flash('Please enter a positive, numerical value.', 'error')
+            flash('Please enter a positive, numerical value with the correct precision.', 'error')
         elif not is_correct_precision(answer, session['length'], session['precision']):
             # Check if answer has the corret precision.
             # If not, display error message.
             flash(f"Incorrect precision. Round to the nearest {session['precision']} {session['unit']} (e.g. {session['length']} {session['unit']}).", 'error')
         elif not is_correct_answer(answer, session['length'], session['precision'], session['divisions']):
-            # Check of answer falls within acceptable range.
-            # If not, display error message.
-            # acceptable_range = find_range(session['length'], session['precision'], session['divisions'])
-            # start = add_trailing_zero(acceptable_range[0], session['precision'])
-            # end = add_trailing_zero(acceptable_range[1], session['precision'])
-            flash(f"Correct precision, but incorrect measurement. Actual length ≈ {session['length']} {session['unit']}", 'error')
+            # Check if submitted answer falls within accepted range compared
+            # to the actual length. If not, display error message.
+            flash(f"Correct precision but incorrect measurement. Actual length ≈ {session['length']} {session['unit']}", 'error')
         else:
-            # Answer has correct value and precision.
+            # Submitted answer has correct value and precision.
             # Display favorable message.
-            # Update template to remove "Check Answer" button.
             flash('Correct!  :-)', 'correct')
-            session['num_correct'] += 1
+            if session['first_try']:
+                session['num_correct'] += 1
+        session['first_try'] = False
+        display_value = answer
     else:
         num_divisions = random.choice([1, 10, 100])
         unit = random.choice(['µm', 'mm', 'cm', 'm'])
@@ -139,8 +138,8 @@ def measurement():
             object_length = int(object_length/10**round_to)*10**round_to
         else:
             object_length = int(object_length)
-        # Add trailing significant zero, if needed.
         wide = round(9.965*object_length*10/numbers[1]+0.2614, 3)
+        # Add trailing significant zero, if needed.
         object_length = add_trailing_zero(object_length, numbers[2])
         session['length'] = object_length
         session['wide'] = wide
@@ -148,9 +147,13 @@ def measurement():
         session['divisions'] = num_divisions
         session['unit'] = unit
         session['num_attempted'] += 1
+        session['first_try'] = True
+        display_value = ''
+    percent_correct = round(session['num_correct']/session['num_attempted']*100,1)
     return render_template('measurement_practice.html',title='Measurement Practice', 
         wide = session['wide'], start_value = session['numbers'][0], end_value = session['numbers'][1], 
-        object_length = session['length'], num_divisions = session['divisions'], nums = session['numbers'], unit = session['unit'])
+        object_length = session['length'], num_divisions = session['divisions'], nums = session['numbers'],
+        unit = session['unit'], display_value = display_value, correct = percent_correct)
 
 if __name__ == '__main__':
     app.run()

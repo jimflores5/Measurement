@@ -52,7 +52,7 @@
                     <label class="col-4 input-label" for="answer">
                         Length =
                     </label>
-                    <input class="col-4 answer-text" name="answer" type="text" value="">
+                    <input class="col-4 answer-text" name="answer" type="text" value="{{display_value}}" required>
                     <label class="col-4 input-unit" for="answer">
                         {{unit}}
                     </label>
@@ -67,17 +67,16 @@
                     {% endif %}
                 </div>
                 <br>
-                <p class="record">Progress: <em>Display num_correct/num_tried (and percentage)</em></p>
+                <p class="record">Progress: {{session['num_correct']}}/{{session['num_attempted']}} ({{correct}}%)</p>
                 <hr>
                 <div class="container wrapper text-center">
                     <a class="btn btn-info mb-3" href="/" role="button">Main Menu</a>
-                    <input class="btn btn-success mb-3" type="submit" value="Check Answer">
+                    {% if session['first_try'] %}
+                        <input class="btn btn-success mb-3" type="submit" value="Check Answer">
+                    {% endif %}
                     <a class="btn btn-primary mb-3" href="/measurement_practice" role="button">New Object</a>
                 </div>
             </form>
         {% endwith %}
     </section>
-    <p>{{nums}}, {{object_length}}</p>
-    <!-- Vertical & Horizontal rulers: https://codepen.io/Raph285/pen/oNPdPWq -->
-    <!-- Horizontal ruler: https://codepen.io/pbweb/pen/gMQKEK-->
 {% endblock %}  
