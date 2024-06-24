@@ -95,6 +95,32 @@ def index():
     session['num_correct'] = 0
     return render_template('index.html',title='Measurement Practice')
 
+@app.route('/accuracy_vs_precision/<page>', methods=['POST', 'GET'])
+def accuracy(page):
+    page_title = 'Accuracy vs. Precision'
+    num_pages = 4
+    template_name = 'accuracy_vs_precision'
+    page = int(page)
+    if request.method == 'POST':
+        pass
+    else:
+        subheading = 'Content coming soon...'
+    return render_template('accuracy_vs_precision.html',title='Accuracy vs. Precision', page = page, page_title = page_title, 
+            num_pages = num_pages, template = template_name, subheading = subheading)
+
+@app.route('/measuring/<page>', methods=['POST', 'GET'])
+def measuring(page):
+    page_title = 'Taking Measurements'
+    num_pages = 3
+    template_name = 'measuring'
+    page = int(page)
+    if request.method == 'POST':
+        pass
+    else:
+        subheading = 'Content coming soon...'
+    return render_template('measuring.html',title='Taking Measurements', page = page, page_title = page_title, 
+            num_pages = num_pages, template = template_name, subheading = subheading)
+
 @app.route('/measurement_practice', methods=['POST', 'GET'])
 def measurement():
     if request.method == 'POST':

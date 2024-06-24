@@ -3,6 +3,10 @@
     font-size: 1.9vw;
 }
 
+.button-margin {
+    margin: 1%;
+}
+
 .main-heading {
     text-decoration: underline;
     font-size: 2.5vw;
@@ -61,7 +65,7 @@
 
 .subheading {
     font-size: 1.9vw;
-    color: brown;
+    color: black;
 }
 
 .record {
