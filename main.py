@@ -98,20 +98,27 @@ def index():
 @app.route('/accuracy_vs_precision/<page>', methods=['POST', 'GET'])
 def accuracy(page):
     page_title = 'Accuracy vs. Precision'
-    num_pages = 4
+    num_pages = 3
     template_name = 'accuracy_vs_precision'
     page = int(page)
     if request.method == 'POST':
         pass
     else:
-        subheading = 'Content coming soon...'
+        if page == 1:
+            subheading = 'Accuracy & precision definitions & examples...'
+        elif page == 2:
+            subheading = 'Precision vs. # of decimal places...'
+        elif page == 3:
+            subheading = 'Concept questions...'
+        else:
+            subheading = 'Content for this page TBD...'
     return render_template('accuracy_vs_precision.html',title='Accuracy vs. Precision', page = page, page_title = page_title, 
             num_pages = num_pages, template = template_name, subheading = subheading)
 
 @app.route('/measuring/<page>', methods=['POST', 'GET'])
 def measuring(page):
     page_title = 'Taking Measurements'
-    num_pages = 3
+    num_pages = 5
     template_name = 'measuring'
     page = int(page)
     if request.method == 'POST':
@@ -119,6 +126,19 @@ def measuring(page):
     else:
         subheading = 'Content coming soon...'
     return render_template('measuring.html',title='Taking Measurements', page = page, page_title = page_title, 
+            num_pages = num_pages, template = template_name, subheading = subheading)
+
+@app.route('/common_mistakes/<page>', methods=['POST', 'GET'])
+def common_mistakes(page):
+    page_title = 'Common Measurement Mistakes'
+    num_pages = 2
+    template_name = 'common_mistakes'
+    page = int(page)
+    if request.method == 'POST':
+        pass
+    else:
+        subheading = 'Content coming soon...'
+    return render_template('common_mistakes.html',title='Common Measurement Mistakes', page = page, page_title = page_title, 
             num_pages = num_pages, template = template_name, subheading = subheading)
 
 @app.route('/measurement_practice', methods=['POST', 'GET'])

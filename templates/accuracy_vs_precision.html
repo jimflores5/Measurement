@@ -2,8 +2,74 @@
 
 {% block content %}
     <section class="container wrapper text-center">
-        <section class="row">
-            <h2>Content coming soon...</h2>
+        <h1 class="subheading">{{subheading}}</h1>
+        <section class="container-fluid frame-width">
+            <section class="row justify-content-center">
+                {% if page == 1 %}
+                    <section class="col-6 text-center border border-dark">
+                        <ol class="frame-text">
+                            <p class="frame-list-heading">A vs. P info</p>
+                            <li>Item...</li>
+                            <li>Item...</li>
+                            <li>Item...</li>
+                            <li>etc.</li>
+                        </ol>
+                    </section>
+                    <section class="col-6 text-center border border-dark">
+                        <figure class="border border-dark">
+                            Figure goes here. (Target and perhaps scale).
+                        </figure>
+                    </section>
+                {% elif page == 2 %}
+                    <section class="col-6 text-center border border-dark">
+                        <ol class="frame-text">
+                            <p class="frame-list-heading">A & P vs. decimal places</p>
+                            <li>Item...</li>
+                            <li>Item...</li>
+                            <li>Item...</li>
+                            <li>etc.</li>
+                        </ol>
+                    </section>
+                    <section class="col-6 text-center border border-dark">
+                        <figure class="border border-dark">
+                            Figure goes here. (Rulers with different divisions marked).
+                        </figure>
+                    </section>
+                {% else %}
+                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingOne">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                                    Concept Question #1
+                                </button>
+                            </h2>
+                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">ID the most precise measurement.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                    Concept Question #2
+                                </button>
+                            </h2>
+                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">ID the most accurate tool.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="flush-headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                Concept Question #3
+                                </button>
+                            </h2>
+                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                <div class="accordion-body">TBD</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+            </section>
         </section>
     </section>
 {% endblock %}  
