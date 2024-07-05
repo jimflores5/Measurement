@@ -1,9 +1,57 @@
 {% extends "tutorials_base.html" %}
 
 {% block content %}
-    <section class="container wrapper text-center">
-        <section class="row">
-            <h2>Content coming soon...</h2>
+    <section class="wrapper text-center">
+        <h1 class="subheading">Subheading here...</h1>
+        <section class="container-fluid frame-width">
+            <section class="row justify-content-center">
+                {% if page == 3 %}
+                    <section class="col-6 text-center border border-dark">
+                        <p class="frame-heading">Video clip for measurement technique here...</p>
+                        <video class="border border-dark intro-vid" width="100%" height="auto" controls>
+                            <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
+                        </video>
+                    </section>
+                    <section class="col-6 text-center border border-dark">
+                        <p class="frame-heading">Examples (figures) with dropdown Reveal Answer buttons...</p>
+                        <div class="accordion-item">
+                            <p class="frame-subheading">Example #1...</p>
+                            <h3 class="accordion-header">
+                                <button class="btn btn-info reveal-button reveal-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Reveal Answer
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>Rutabagas!</strong>
+                                </div>
+                            </div>
+                            <hr>
+                            <p class="frame-subheading">Example #2...</p>
+                            <h3 class="accordion-header">
+                                <button class="btn btn-info reveal-button reveal-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    Reveal Answer
+                                </button>
+                            </h3>
+                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <strong>More rutabagas!</strong>
+                                </div>
+                            </div>
+                        </div>                        
+                    </section>
+                {% elif page > 3 %}
+                    <section class="col-12 text-center border border-dark">
+                        <p class="frame-text">Page 4: Bottom of meniscus (with diagrams and examples).</p>
+                        <p class="frame-text">Page 5: If necessary (TBD)...</p>
+                    </section>
+                {% else %}
+                    <section class="col-12 text-center border border-dark">
+                        <p class="frame-text">Page 1: Select options for invalid measurements based on ruler diagrams.</p>
+                        <p class="frame-text">Page 2: Precision of a tool depends on the scale and markings present (figures).</p>
+                    </section>
+                {% endif %}
+            </section>
         </section>
     </section>
 {% endblock %}
