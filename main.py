@@ -123,6 +123,13 @@ def measuring(page):
     page = int(page)
     if request.method == 'POST':
         pass
+
+    if page == 1:
+        subheading = 'First practice task: Consider the following rulers.'
+    elif page == 2:
+        subheading = 'The precision of a measurement depends on the markings on the tool.'
+    elif page == 3:
+        subheading = 'Where to put the guess digit?'
     else:
         subheading = 'Content coming soon...'
     return render_template('measuring.html',title='Taking Measurements', page = page, page_title = page_title, 

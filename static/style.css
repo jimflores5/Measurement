@@ -7,6 +7,12 @@
     margin: 1%;
 }
 
+.responsive-btn {
+    margin: 1%;
+    width: 50%;
+    font-size: 1.2vw;
+}
+
 .main-heading {
     text-decoration: underline;
     font-size: 2.5vw;
@@ -27,7 +33,7 @@
     font-size: 1.5vw;
     text-align: center;
     text-decoration: underline;
-    color: blue;
+    color: black;
 }
 
 .frame-subheading {
@@ -45,8 +51,7 @@
 .frame-list-heading {
     font-size: 1.4vw;
     text-align: left;
-    text-decoration: underline;
-    color: black;
+    color: green;
 }
 
 .left-side-label {
@@ -63,9 +68,15 @@
     vertical-align: middle;
 }
 
+.checkbox-label {
+    font-size: 1.1vw;
+    text-align: left;
+    vertical-align: middle;
+}
+
 .subheading {
     font-size: 1.9vw;
-    color: black;
+    color: blue;
 }
 
 .record {

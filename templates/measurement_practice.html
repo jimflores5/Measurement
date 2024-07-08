@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <section class="container">
-        <h1 class = "wrapper text-center main-heading">Measurement Practice</h1>
-        <h2 class="page-instructions">Use the ruler below to measure the length of the box.</h2>
+    <section class="container wrapper text-center">
+        <h1 class = "main-heading">Measurement Practice</h1>
+        <h2 class="subheading">Use the ruler below to measure the length of the box.</h2>
     </section>
     <br>
     <section class="container text-center">
@@ -70,7 +70,7 @@
                 <p class="record">Progress: {{session['num_correct']}}/{{session['num_attempted']}} ({{correct}}%)</p>
                 <hr>
                 <div class="container wrapper text-center">
-                    <a class="btn btn-info mb-3" href="/" role="button">Main Menu</a>
+                    <a class="btn btn-secondary mb-3" href="/" role="button">Main Menu</a>
                     {% if session['first_try'] %}
                         <input class="btn btn-success mb-3" type="submit" value="Check Answer">
                     {% endif %}
