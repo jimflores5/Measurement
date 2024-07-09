@@ -9,12 +9,12 @@
                     <section class="col-8 text-center border border-dark">
                         <p class="frame-heading" style="color:green">Ruler A</p>
                         <figure class="figure">
-                            <img src="{{url_for('static', filename='meas_ex_1.png')}}" class="figure-img img-fluid" alt="Equate a famous painting to 1 kiloword.">
+                            <img src="{{url_for('static', filename='meas_ex_1.png')}}" class="figure-img img-fluid" alt="Ruler with only 0 cm and 10 cm markings, plus an object less than half the length of the ruler.">
                         </figure>
                         <hr>
                         <p class="frame-heading" style="color:purple">Ruler B</p>
                         <figure class="figure">
-                            <img src="{{url_for('static', filename='meas_ex_2.png')}}" class="figure-img img-fluid" alt="Equate a famous painting to 1 kiloword.">
+                            <img src="{{url_for('static', filename='meas_ex_2.png')}}" class="figure-img img-fluid" alt="Ruler marked every 1 cm, plus an object that fallw between the 8cm and 9 cm marks.">
                         </figure>
                     </section>
                     <section class="col-4 border border-dark text-left">
@@ -59,9 +59,18 @@
                                 </button>
                             </h2>
                             <div id="collapseZero" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body frame-text">
-                                    Lorem ipsum...
-                                </div>
+                                <section class="accordion-body frame-text row justify-content-center">
+                                    <div class="col-5" style="color:blue">
+                                        <video class="border border-dark intro-vid" width="100%" height="auto" controls>
+                                            <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
+                                        </video>
+                                    </div>
+                                    <div class="col-7 text-center">
+                                        <figure class="figure">
+                                            <img src="{{url_for('static', filename='tick_marks.png')}}" class="figure-img img-fluid" alt="Ruler with only 0 cm and 10 cm markings, plus an object less than half the length of the ruler.">
+                                        </figure>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                         <div class="accordion-item border border-dark">
@@ -71,36 +80,78 @@
                                 </button>
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body frame-text">
-                                    <p>Ruler A and B figures (with answer options from page 1).</p>
-                                    <p>Discuss WHY 3 of the 5 options for each ruler are incorrect.</p>
-                                </div>
+                                <section class="accordion-body frame-text row justify-content-center">
+                                    <div class="col-6" style="color:blue">
+                                        <ul>
+                                            <li>The ruler on the right is marked every 1 cm.</li>
+                                            <li>We can see that the object is between 8 cm and 9 cm.</li>
+                                            <ul style="color:purple"><li>We KNOW the first digit in our measurement must be an "8".</li></ul>
+                                            <li>How much longer than 8 cm is the object? We can't say for sure.</li>
+                                            <ul style="color:purple"><li>We can GUESS a value after the decimal, like 8.2 cm or 8.3 cm.</li></ul>
+                                            <li>Since the space between 8 and 9 cm is unmarked, adding more digits to the measurement just adds more guesses.</li>
+                                            <ul style="color:purple"><li>8.2 cm contains one guess digit. 8.25 cm contains two.</li></ul>
+                                            <li style="color:red">By convention, a measurement can contain only <strong>ONE</strong> guess digit!</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <figure class="figure">
+                                            <img src="{{url_for('static', filename='meas_ex_2.png')}}" class="figure-img img-fluid" alt="Ruler with only 0 cm and 10 cm markings, plus an object less than half the length of the ruler.">
+                                        </figure>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                         <div class="accordion-item border border-dark">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <span><u>Compare</u>: Rulers with the same <em>range</em> but different numbers of tick marks.</span>
+                                    <span><u>Compare</u>: Same range but different numbers of tick marks.</span>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body frame-text">
-                                    <p>Show 2 figures + examples showing different levels of precision.</p>
-                                    <p>Explain...</p>
-                                </div>
-                            </div>
+                                <section class="accordion-body frame-text row justify-content-center">
+                                    <div class="col-6" style="color:blue">
+                                        <ul>
+                                            <li>Both tools show the same overall range (0 g - 5 g).</li>
+                                            <li>The top tool has marks every 1 g. The bottom tool has marks every 0.1 g.</li>
+                                            <ul style="color:purple">
+                                                <li>With more marks, the bottom tool places the guess digit further to the right.</li>
+                                                <li>2.<u>4</u> g for the top tool vs. 2.4<u>2</u> g for the bottom.</li>
+                                            </ul>
+                                            <li>For the same range, adding more marks to the tool increses the <em>precision</em> of the measurement.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <figure class="figure">
+                                            <img src="{{url_for('static', filename='scale_1.png')}}" class="figure-img img-fluid" alt="Two scales marked from 0 - 5 grams. The top scale is marked every 1 g, while the bottom scale is marked every 0.1 g.">
+                                        </figure>
+                                    </div>
+                                </section>
                         </div>
                         <div class="accordion-item border border-dark">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <span><u>Compare</u>: Rulers with the same number of tick marks but different ranges.</span>
+                                    <span><u>Compare</u>: Same number of tick marks but different ranges.</span>
                                 </button>
                             </h2>
                             <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body frame-text">
-                                    <p>Show 2 figures + examples showing different levels of precision.</p>
-                                    <p>Explain...</p>
-                                </div>
+                                <section class="accordion-body frame-text row justify-content-center">
+                                    <div class="col-6" style="color:blue">
+                                        <ul>
+                                            <li>Both tools have the same number of markings.</li>
+                                            <li>The top tool has a range of 0 - 5 grams. The bottom tool has a smaller range (0 - 0.5 g).</li>
+                                            <ul style="color:purple">
+                                                <li>With a smaller range, the bottom tool places the guess digit further to the right.</li>
+                                                <li>3.4<u>8</u> g for the top tool vs. 0.34<u>8</u> g for the bottom.</li>
+                                            </ul>
+                                            <li>For the same number of tick marks, a smaller range increses the <em>precision</em> of the measurement.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <figure class="figure">
+                                            <img src="{{url_for('static', filename='scale_2.png')}}" class="figure-img img-fluid" alt="Two scales with the same number of tick marks. The top scale has a range of 0 - 5 grams, while the bottom scale has a range of 0 - 0.5 g.">
+                                        </figure>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                     </div>

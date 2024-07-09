@@ -162,3 +162,8 @@
 .answer-text {
     font-size: 1.4vw;
 }
+
+.frame-figure {
+    width: 80%;
+    vertical-align: middle;
+}
