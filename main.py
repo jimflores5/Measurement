@@ -118,7 +118,7 @@ def accuracy(page):
 @app.route('/measuring/<page>', methods=['POST', 'GET'])
 def measuring(page):
     page_title = 'Taking Measurements'
-    num_pages = 5
+    num_pages = 4
     template_name = 'measuring'
     page = int(page)
     if request.method == 'POST':
@@ -131,7 +131,7 @@ def measuring(page):
     elif page == 3:
         subheading = 'Where to put the guess digit?'
     else:
-        subheading = 'Content coming soon...'
+        subheading = 'Common mistakes'
     return render_template('measuring.html',title='Taking Measurements', page = page, page_title = page_title, 
             num_pages = num_pages, template = template_name, subheading = subheading)
 

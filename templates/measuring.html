@@ -157,47 +157,65 @@
                     </div>
                 {% elif page == 3 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Video clip for measurement technique here...</p>
+                        <p class="frame-heading">Watch the video, then try the example on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
                             <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Examples (figures) with dropdown Reveal Answer buttons...</p>
+                        <p class="frame-heading">Practice: Identify the measurement for each arrow below.</p>
                         <div class="accordion-item">
-                            <p class="frame-subheading">Example #1...</p>
+                            <figure class="figure" style="width: 80%">
+                                <img src="{{url_for('static', filename='practice_1.png')}}" class="figure-img img-fluid" alt="Showing 3 rulers. Top ruler is marked every 10 cm, with the arrow between the 10 cm and 20 cm marks. Middle ruler is marked every 0.1 g, with the arrow eaxclty on the 51.90 g mark. Bottom ruler is marked every 0.001 m, with the arrow between the 0.007 cm and 0.008 m marks.">
+                            </figure>
                             <h3 class="accordion-header">
-                                <button class="btn btn-info reveal-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Reveal Answer
+                                <button class="btn btn-success responsive-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Check Answers
                                 </button>
                             </h3>
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body">
-                                    <strong>Rutabagas!</strong>
-                                </div>
-                            </div>
-                            <hr>
-                            <p class="frame-subheading">Example #2...</p>
-                            <h3 class="accordion-header">
-                                <button class="btn btn-info reveal-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Reveal Answer
-                                </button>
-                            </h3>
-                            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    <strong>More rutabagas!</strong>
+                                    <ul class="frame-text">
+                                        <li style="color:blue"><u>Top arrow</u>: 12 cm, 13 cm, or 14 cm</li>
+                                        <li style="color:green"><u>Middle arrow</u>: 51.90 g (NOT 51.9 g!)</li>
+                                        <li style="color:purple"><u>Bottom arrow</u>: 0.0074 m, 0.0075 m, or 0.0076 m</li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>                        
                     </section>
-                {% elif page > 3 %}
-                    <section class="col-12 text-center border border-dark">
-                        <p class="frame-text">Page 4: Bottom of meniscus (with diagrams and examples).</p>
-                        <p class="frame-text">Page 5: If necessary (TBD)...</p>
-                    </section>
                 {% else %}
-                    <section class="col-12 text-center border border-dark">
-                        <p class="frame-text">Page 2: Precision of a tool depends on the scale and markings present (figures).</p>
+                    <section class="col-6 text-center border border-dark">
+                        <p class="frame-heading">Some frequent data-recording errors.</p>
+                        <video class="border border-dark intro-vid" width="100%" height="auto" controls>
+                            <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
+                        </video>
+                    </section>
+                    <section class="col-6 text-center border border-dark">
+                        <p class="frame-heading">Trailing zeros DO serve a purpose!</p>
+                        <figure class="figure" style="width: 65%">
+                            <img src="{{url_for('static', filename='trailing_zero.png')}}" class="figure-img img-fluid" alt="Showing a frown-faced zero with a speech bubble. The digit wonders why students ignore it when it comes last after the decimal.">
+                        </figure>
+                        <hr>
+                        <div class="accordion-item wrapper">
+                            <p class="frame-text text-center"><u>True or False</u>:</p>
+                            <p class="frame-text text-center">The measurements 4 cm, 4.0 cm, and 4.00 cm mean the same thing.</p>
+                            <h3 class="accordion-header">
+                                <button class="btn btn-success responsive-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Check Answer
+                                </button>
+                            </h3>
+                            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <div class="accordion-body">
+                                    <h4>FALSE!</h4>
+                                    <ul class="frame-text" style="color:blue">Different rulers were used to take each measurement.
+                                        <li><u>4 cm</u>: The ruler was marked every 10 cm.</li>
+                                        <li><u>4.0 cm</u>: The ruler was marked every 1 cm.</li>
+                                        <li><u>4.00 cm</u>: The ruler was marked every 0.1 cm.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div> 
                     </section>
                 {% endif %}
             </section>
