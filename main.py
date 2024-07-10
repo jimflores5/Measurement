@@ -105,11 +105,11 @@ def accuracy(page):
         pass
     else:
         if page == 1:
-            subheading = 'Accuracy & precision definitions & examples...'
+            subheading = 'Vocabulary and Examples'
         elif page == 2:
-            subheading = 'Precision vs. # of decimal places...'
+            subheading = 'How do these relate to the number of decimal places?'
         elif page == 3:
-            subheading = 'Concept questions...'
+            subheading = 'Concept Questions'
         else:
             subheading = 'Content for this page TBD...'
     return render_template('accuracy_vs_precision.html',title='Accuracy vs. Precision', page = page, page_title = page_title, 
