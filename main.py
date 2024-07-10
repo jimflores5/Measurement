@@ -107,7 +107,7 @@ def accuracy(page):
         if page == 1:
             subheading = 'Vocabulary and Examples'
         elif page == 2:
-            subheading = 'How do these relate to the number of decimal places?'
+            subheading = 'Does the number of decimal places relate to accuracy or precision?'
         elif page == 3:
             subheading = 'Concept Questions'
         else:

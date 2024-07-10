@@ -7,25 +7,24 @@
             <section class="row justify-content-center">
                 {% if page == 1 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Video heading here...</p>
+                        <p class="frame-subheading">Watch the video, then answer the question on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
                             <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Figure heading here...</p>
                         <div class="accordion-item">
+                            <p class="frame-subheading">Concept question...</p>
                             <figure class="figure" style="width: 80%">
                                 <p class="frame-text">Figure goes here. (Target and perhaps scale).</p>
-                                <p class="frame-text">Concept question...</p>
                             </figure>
-                            <h3 class="accordion-header">
+                            <section class="accordion-header">
                                 <button class="btn btn-success responsive-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Check Answer
                                 </button>
-                            </h3>
+                            </section>
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
+                                <div class="accordion-body frame-text">
                                     Lorem ipsum...
                                 </div>
                             </div>
@@ -33,26 +32,36 @@
                     </section>
                 {% elif page == 2 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Video heading here...</p>
+                        <p class="frame-subheading">Watch the video, then answers the question on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
                             <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Figure heading here...</p>
+                        <ol class="frame-text">
+                            <li style="color:green">Which ruler (A, B, or C) would give the most precise measurements?</li>
+                            <li style="color:purple">Which ruler could give the most accurate length?</li>
+                        </ol>
                         <div class="accordion-item">
-                            <figure class="figure" style="width: 80%">
-                                <p class="frame-text">Figure goes here. (Rulers with different divisions marked).</p>
-                                <p class="frame-text">Concept question...</p>
+                            <figure class="figure frame-figure">
+                                <img src="{{url_for('static', filename='ruler_choice.png')}}" class="figure-img img-fluid" alt="Showing 3 rulers. Ruler A is marked every 10 cm. Ruler B is marked every 1 cm. Ruler C is marked every 0.1 cm.">
                             </figure>
                             <h3 class="accordion-header">
                                 <button class="btn btn-success responsive-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Check Answer
+                                    Check Answers
                                 </button>
                             </h3>
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                    Lorem ipsum...
+                                <div class="accordion-body frame-text">
+                                    <ol>
+                                        <li style="color:green">Assuming the tools are used correctly, ruler C would give the most precise results.</li>
+                                        <ul class="frame-text" style="color:green">
+                                            <li>For ruler C, repeated measurements could differ by ≈0.01 - 0.03 cm.</li>
+                                            <li>For B, repeated measurements could differ by 0.1 - 0.3 cm.</li>
+                                            <li>For A, repeated measurements could differ by 1 - 2 cm.</li>
+                                        </ul>
+                                        <li style="color:purple"><strong>ANY</strong> of the rulers could be the most accurate! Accuracy depends on the tool AND the person using it.</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>                        
