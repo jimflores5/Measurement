@@ -50,29 +50,8 @@
                             </div>
                         </section>
                     </section>
-                {% elif page == 2 %}
+                {% elif page == 3 %}
                     <div class="accordion" id="accordionExample">
-                        <div class="accordion-item border border-dark">
-                            <h2 class="accordion-header">
-                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
-                                    <span>Certain vs. uncertain digits.</span>
-                                </button>
-                            </h2>
-                            <div id="collapseZero" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-                                <section class="accordion-body frame-text row justify-content-center">
-                                    <div class="col-5" style="color:blue">
-                                        <video class="border border-dark intro-vid" width="100%" height="auto" controls>
-                                            <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
-                                        </video>
-                                    </div>
-                                    <div class="col-7 text-center">
-                                        <figure class="figure">
-                                            <img src="{{url_for('static', filename='tick_marks.png')}}" class="figure-img img-fluid" alt="Ruler with only 0 cm and 10 cm markings, plus an object less than half the length of the ruler.">
-                                        </figure>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
                         <div class="accordion-item border border-dark">
                             <h2 class="accordion-header">
                                 <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -81,15 +60,15 @@
                             </h2>
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <section class="accordion-body frame-text row justify-content-center">
-                                    <div class="col-6" style="color:blue">
-                                        <ul>
+                                    <div class="col-6">
+                                        <ul class="outer-list">
                                             <li>The ruler on the right is marked every 1 cm.</li>
                                             <li>We can see that the object is between 8 cm and 9 cm.</li>
-                                            <ul style="color:purple"><li>We KNOW the first digit in our measurement must be an "8".</li></ul>
-                                            <li>How much longer than 8 cm is the object? We can't say for sure.</li>
-                                            <ul style="color:purple"><li>We can GUESS a value after the decimal, like 8.2 cm or 8.3 cm.</li></ul>
+                                            <ul class="inner-list"><li>We KNOW the first digit in our measurement must be "8".</li></ul>
+                                            <li>How much longer than 8 cm is the object? We can't say for sure!</li>
+                                            <ul class="inner-list"><li>We can GUESS a value after the decimal, like 8.2 cm or 8.3 cm.</li></ul>
                                             <li>Since the space between 8 and 9 cm is unmarked, adding more digits to the measurement just adds more guesses.</li>
-                                            <ul style="color:purple"><li>8.2 cm contains one guess digit. 8.25 cm contains two.</li></ul>
+                                            <ul class="inner-list"><li>8.2 cm contains one guess digit. 8.25 cm contains two.</li></ul>
                                             <li style="color:red">By convention, a measurement can contain only <strong>ONE</strong> guess digit!</li>
                                         </ul>
                                     </div>
@@ -103,17 +82,50 @@
                         </div>
                         <div class="accordion-item border border-dark">
                             <h2 class="accordion-header">
+                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-expanded="true" aria-controls="collapseZero">
+                                    <span>Certain vs. uncertain digits.</span>
+                                </button>
+                            </h2>
+                            <div id="collapseZero" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                                <section class="accordion-body frame-text row justify-content-center">
+                                    <div class="col-6" style="color:blue">
+                                        <ul class="outer-list">
+                                            <li>The markings on a tool provide numbers that we <em>know</em> are correct.</li>
+                                            <ul class="inner-list">
+                                                <li>The graduated cylinder on the right is marked every 1 mL.</li>
+                                                <li>The bottom of the liquid line falls between the 52 mL and 53 mL marks.</li>
+                                                <li>Our measurment must start with "52". These are the <strong>certain</strong> digits.</li>
+                                            </ul>
+                                            <li>Estimating the liquid level between the marks adds a guess to the measurement.</li>
+                                            <ul class="inner-list">
+                                                <li>This guess is an <em>uncertain</em> digit.</li>
+                                                <li>Acceptable volume readings include 52.6 mL, 52.7 mL, or 52.8 mL.</li>
+                                                <li>Each of these measurements has the same precision.</li>
+                                            </ul>
+                                            <li style="color:red">By convention, a measurement can contain only <strong>ONE</strong> guess digit!</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <figure class="figure">
+                                            <img src="{{url_for('static', filename='tick_marks.png')}}" class="figure-img img-fluid" alt="Ruler with only 0 cm and 10 cm markings, plus an object less than half the length of the ruler.">
+                                        </figure>
+                                    </div>
+                                </section>
+                            </div>
+                        </div>
+                        <div class="accordion-item border border-dark">
+                            <h2 class="accordion-header">
                                 <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     <span><u>Compare</u>: Same range but different numbers of tick marks.</span>
                                 </button>
                             </h2>
                             <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <section class="accordion-body frame-text row justify-content-center">
-                                    <div class="col-6" style="color:blue">
-                                        <ul>
+                                    <div class="col-6">
+                                        <ul class="outer-list">
                                             <li>Both tools show the same overall range (0 g - 5 g).</li>
                                             <li>The top tool has marks every 1 g. The bottom tool has marks every 0.1 g.</li>
-                                            <ul style="color:purple">
+                                            <ul class="inner-list">
                                                 <li>With more marks, the bottom tool places the guess digit further to the right.</li>
                                                 <li>2.<u>4</u> g for the top tool vs. 2.4<u>2</u> g for the bottom.</li>
                                             </ul>
@@ -155,15 +167,15 @@
                             </div>
                         </div>
                     </div>
-                {% elif page == 3 %}
+                {% elif page == 2 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Watch the video, then try the example on the right.</p>
+                        <p class="frame-heading">Watch the video, then try the examples on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
                             <source src="{{url_for('static', filename='measurement_technique.mp4')}}" type="video/mp4">
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-heading">Practice: Identify the measurement for each arrow below.</p>
+                        <p class="frame-heading">Identify the measurement for each arrow below.</p>
                         <div class="accordion-item">
                             <figure class="figure" style="width: 80%">
                                 <img src="{{url_for('static', filename='practice_1.png')}}" class="figure-img img-fluid" alt="Showing 3 rulers. Top ruler is marked every 10 cm, with the arrow between the 10 cm and 20 cm marks. Middle ruler is marked every 0.1 g, with the arrow eaxclty on the 51.90 g mark. Bottom ruler is marked every 0.001 m, with the arrow between the 0.007 cm and 0.008 m marks.">

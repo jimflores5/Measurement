@@ -126,10 +126,10 @@ def measuring(page):
 
     if page == 1:
         subheading = 'First practice task: Consider the following rulers.'
-    elif page == 2:
-        subheading = 'The precision of a measurement depends on the markings on the tool.'
     elif page == 3:
-        subheading = 'Where to put the guess digit?'
+        subheading = 'The precision of a measurement depends on the markings on the tool.'
+    elif page == 2:
+        subheading = 'Where do we put the guess digit?'
     else:
         subheading = 'Common mistakes'
     return render_template('measuring.html',title='Taking Measurements', page = page, page_title = page_title, 
