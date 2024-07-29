@@ -9,7 +9,7 @@
                     <section class="col-6 text-center border border-dark">
                         <p class="frame-subheading">Watch the video, then answer the question on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
-                            <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
+                            <source src="{{url_for('static', filename='accuracy_vs_precision.mp4')}}" type="video/mp4">
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
@@ -32,14 +32,14 @@
                     </section>
                 {% elif page == 2 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-subheading">Watch the video, then answers the question on the right.</p>
+                        <p class="frame-subheading">Watch the video, then answer the questions on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
-                            <!-- <source src="{{url_for('static', filename='who_uses_metric.mp4')}}" type="video/mp4"> -->
+                            <source src="{{url_for('static', filename='precision_vs_decimals.mp4')}}" type="video/mp4">
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
                         <ol class="frame-text">
-                            <li style="color:green">Which ruler (A, B, or C) would give the most precise measurements?</li>
+                            <li style="color:green">Which ruler (A, B, or C) gives the most precise measurements?</li>
                             <li style="color:purple">Which ruler could give the most accurate length?</li>
                         </ol>
                         <div class="accordion-item">
@@ -54,7 +54,7 @@
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body frame-text">
                                     <ol>
-                                        <li style="color:green">Assuming the tools are used correctly, ruler C would give the most precise results.</li>
+                                        <li style="color:green">Assuming the tools are used correctly, ruler C gives the most precise results.</li>
                                         <ul class="frame-text" style="color:green">
                                             <li>For ruler C, repeated measurements could differ by ≈0.01 - 0.03 cm.</li>
                                             <li>For B, repeated measurements could differ by 0.1 - 0.3 cm.</li>
