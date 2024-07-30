@@ -7,25 +7,53 @@
             <section class="row justify-content-center">
                 {% if page == 1 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-subheading">Watch the video, then answer the question on the right.</p>
+                        <p class="frame-heading">Watch the video, then answer the questions on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
                             <source src="{{url_for('static', filename='accuracy_vs_precision.mp4')}}" type="video/mp4">
                         </video>
                     </section>
                     <section class="col-6 text-center border border-dark">
                         <div class="accordion-item">
-                            <p class="frame-subheading">Concept question...</p>
-                            <figure class="figure" style="width: 80%">
-                                <p class="frame-text">Figure goes here. (Target and perhaps scale).</p>
-                            </figure>
+                            <p class="frame-text" style="font-size: 1.4vw;">Several students measured the volume of an irregularly shaped object. Their results are shown below.</p>
+                            <table class="table table-striped-columns border border-dark table-text">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Student</th>
+                                        {% for index in range(6) %}
+                                            <th scope="col" class="border border-dark">{{index+1}}</th>
+                                        {% endfor %}
+                                        <th scope="col">Average</th>
+                                    </tr>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">Volume (mL)</th>
+                                            {% for item in [90, 110, 100, 87, 103, 82, 95] %}
+                                                <td scope="row" class="border border-dark">{{item}}</td>
+                                            {% endfor %}
+                                        </tr>
+                                    </tbody>
+                                </thead>
+                            </table>
+                            <ol class="frame-text" style="color:blue">
+                                <li>Do the measurements show good <strong>precision</strong>? Why or why not?</li>
+                                <li style="color:purple">The actual volume of the object is 96 mL. How <strong>accurate</strong> are the measurements? (Assume ± 5 mL is good).</li>
+                                <hr>
+                                <li>Draw a picture showing measurements that are precise but not accurate.</li>
+                                <li style="color:purple">Can a set of measurements be accurate but not precise? EXPLAIN.</li>
+                            </ol>
                             <section class="accordion-header">
                                 <button class="btn btn-success responsive-btn collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                    Check Answer
+                                    Check Answers
                                 </button>
                             </section>
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body frame-text">
-                                    Lorem ipsum...
+                                    <ol class="frame-text" style="color:green">
+                                        <li>The measurements are NOT precise. The volume range is 28 mL, which is significant compared to the size of the object.</li>
+                                        <li style="color:purple">Only student #3 reported an accurate result, but the average is very close to the true value!</li>
+                                        <li>A dartboard works well for this answer. (Check out 5:00 - 5:16 in the video).</li>
+                                        <li style="color:purple">"Yes" AND "No". Watch that part of the video again! ;-)</li>
+                                    </ol>
                                 </div>
                             </div>
                         </div>                        
