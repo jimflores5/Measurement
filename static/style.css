@@ -51,6 +51,19 @@
 .frame-list-heading {
     font-size: 1.4vw;
     text-align: left;
+    color: black;
+}
+
+.list-colors {
+    font-size: 1.3vw;
+    text-align: left;
+}
+
+.list-colors li:nth-child(odd) {
+    color: blue;
+}
+
+.list-colors li:nth-child(even) {
     color: green;
 }
 

@@ -109,9 +109,9 @@ def accuracy(page):
         elif page == 2:
             subheading = 'Does the number of decimal places relate to accuracy or precision?'
         elif page == 3:
-            subheading = 'Concept Questions'
+            subheading = 'Summary and Concept Questions'
         else:
-            subheading = 'Content for this page TBD...'
+            subheading = 'This page under construction. Content coming soon...'
     return render_template('accuracy_vs_precision.html',title='Accuracy vs. Precision', page = page, page_title = page_title, 
             num_pages = num_pages, template = template_name, subheading = subheading)
 
@@ -133,19 +133,6 @@ def measuring(page):
     else:
         subheading = 'Common mistakes'
     return render_template('measuring.html',title='Taking Measurements', page = page, page_title = page_title, 
-            num_pages = num_pages, template = template_name, subheading = subheading)
-
-@app.route('/common_mistakes/<page>', methods=['POST', 'GET'])
-def common_mistakes(page):
-    page_title = 'Common Measurement Mistakes'
-    num_pages = 2
-    template_name = 'common_mistakes'
-    page = int(page)
-    if request.method == 'POST':
-        pass
-    else:
-        subheading = 'Content coming soon...'
-    return render_template('common_mistakes.html',title='Common Measurement Mistakes', page = page, page_title = page_title, 
             num_pages = num_pages, template = template_name, subheading = subheading)
 
 @app.route('/measurement_practice', methods=['POST', 'GET'])

@@ -49,7 +49,7 @@
                             <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                                 <div class="accordion-body frame-text">
                                     <ol class="frame-text" style="color:green">
-                                        <li>The measurements are NOT precise. The volume range is 28 mL, which is significant compared to the size of the object.</li>
+                                        <li>The measurements are NOT precise. The values cover a range of 28 mL, which is significant compared to each volume result.</li>
                                         <li style="color:purple">Only student #3 reported an accurate result, but the average is very close to the true value!</li>
                                         <li>A dartboard works well for this answer. (Check out 5:00 - 5:16 in the video).</li>
                                         <li style="color:purple">"Yes" AND "No". Watch that part of the video again! ;-)</li>
@@ -60,7 +60,7 @@
                     </section>
                 {% elif page == 2 %}
                     <section class="col-6 text-center border border-dark">
-                        <p class="frame-subheading">Watch the video, then answer the questions on the right.</p>
+                        <p class="frame-heading">Watch the video, then answer the questions on the right.</p>
                         <video class="border border-dark intro-vid" width="100%" height="auto" controls>
                             <source src="{{url_for('static', filename='precision_vs_decimals.mp4')}}" type="video/mp4">
                         </video>
@@ -84,8 +84,8 @@
                                     <ol>
                                         <li style="color:green">Assuming the tools are used correctly, ruler C gives the most precise results.</li>
                                         <ul class="frame-text" style="color:green">
-                                            <li>For ruler C, repeated measurements could differ by ≈0.01 - 0.03 cm.</li>
-                                            <li>For B, repeated measurements could differ by 0.1 - 0.3 cm.</li>
+                                            <li>For ruler C, repeated measurements could differ by ≈ 0.01 - 0.02 cm.</li>
+                                            <li>For B, repeated measurements could differ by 0.1 - 0.2 cm.</li>
                                             <li>For A, repeated measurements could differ by 1 - 2 cm.</li>
                                         </ul>
                                         <li style="color:purple"><strong>ANY</strong> of the rulers could be the most accurate! Accuracy depends on the tool AND the person using it.</li>
@@ -95,37 +95,70 @@
                         </div>                        
                     </section>
                 {% else %}
-                    <div class="accordion accordion-flush" id="accordionFlushExample">
+                    <div class="accordion accordion-flush" id="A_P_summary">
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingOne">
-                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+                            <h2 class="accordion-header" id="headingZero">
+                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseZero" aria-expanded="false" aria-controls="collapseZero">
+                                    Key Points
+                                </button>
+                            </h2>
+                            <div id="collapseZero" class="accordion-collapse collapse" aria-labelledby="headingZero" data-bs-parent="#A_P_summary">
+                                <div class="accordion-body frame-text">
+                                    <ol class="list-colors">
+                                        <li><u><strong>Accuracy</strong></u> describes how close a result comes to the true value.</li>
+                                        <li><u><strong>Precision</strong></u> describes how close a group of results come to each other.</li>
+                                        <li>The number of decimal places in a measurement relates to <em>precision</em>, not accuracy.</li>
+                                        <li>Good lab technique leads to precise results.</li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
                                     Question #1
                                 </button>
                             </h2>
-                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne">
-                                <div class="accordion-body frame-text">
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#A_P_summary">
+                                <div class="accordion-body frame-text" style="color:blue;">
                                     <u>True or False</u>: Taking more precise measurements increases the accuracy of the results.
                                 </div>
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingTwo">
-                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                                     Question #2
                                 </button>
                             </h2>
-                            <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo">
-                                <div class="accordion-body frame-text">ID the most accurate tool.</div>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#A_P_summary">
+                                <section class="accordion-body frame-text row justify-content-center">
+                                    <div class="col-6" style="color:green">
+                                        <p>A student must measure the lengh of the top object.</p>
+                                        <p>Ruler B is more precise than ruler A.</p>
+                                        <p>Explain why, in this case, ruler A is more likely to produce an accurate measurement.</p>
+                                    </div>
+                                    <div class="col-6 text-center">
+                                        <figure class="figure">
+                                            <img src="{{url_for('static', filename='ruler_choice_2.png')}}" class="figure-img img-fluid" alt="Showing a rectangle to be measured. The rectangle is shorter than ruler A and longer than ruler B. Ruler B has more precise markings than ruler A.">
+                                        </figure>
+                                    </div>
+                                </section>
                             </div>
                         </div>
                         <div class="accordion-item">
-                            <h2 class="accordion-header" id="flush-headingThree">
-                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed frame-list-heading" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     Answers
                                 </button>
                             </h2>
-                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree">
-                                <p class="accordion-body frame-text"><u>Question #1</u>: FALSE!</p>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree">
+                                <div class="accordion-body frame-text">
+                                    <ul class="list-colors">
+                                        <li><u>Question #1</u>: FALSE!</li>
+                                        <li><u>Question #2</u>: Even though ruler A is less precise, the student can use it to complete the measurement in one step. Ruler B is shorter than the object, so the student must reposition the tool as they measure the length. The more times ruler B is moved, the more uncertainty there will be in the result.</li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
